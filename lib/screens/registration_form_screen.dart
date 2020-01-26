@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
 // import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-
+import './login_screen.dart';
+import './class_screen.dart';
 import '../widgets/registration_item.dart';
 
 class RegistrationFormScreen extends StatefulWidget {
+  static const routeName = '/register';
   @override
   _RegistrationFormScreenState createState() => _RegistrationFormScreenState();
 }
 
 class _RegistrationFormScreenState extends State<RegistrationFormScreen> {
+
   final GlobalKey<FormState> _registrationKey = GlobalKey();
 
   final _passwordController = TextEditingController();
@@ -42,10 +45,12 @@ class _RegistrationFormScreenState extends State<RegistrationFormScreen> {
                 height: 80,
                 width: 80,
                 alignment: Alignment.center,
+                // color: Colors.red,
                 child: Image.asset(
                   'assets/images/logo.png',
                   fit: BoxFit.cover,
                 ),
+                // child: Text('Hello'),
               ),
               Center(
                 child: Text(
@@ -83,7 +88,7 @@ class _RegistrationFormScreenState extends State<RegistrationFormScreen> {
                         height: 16,
                       ),
                       RegistrationItem(
-                        icon: Icon(Icons.school),
+                        icon: Icon(Icons.home),
                         label: 'ADDRESS',
                       ),
                       SizedBox(
@@ -109,7 +114,7 @@ class _RegistrationFormScreenState extends State<RegistrationFormScreen> {
                       },
                       ),
                       RegistrationItem(
-                        icon: Icon(Icons.school),
+                        icon: Icon(Icons.vpn_key),
                         label: 'PASSWORD ',
                         controller: _passwordController,
                       ),
@@ -195,7 +200,9 @@ class _RegistrationFormScreenState extends State<RegistrationFormScreen> {
                               ),
                             ),
                             color: Colors.red,
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.of(context).pushReplacementNamed(ClassScreen.routeName);
+                            },
                           ),
                           SizedBox(
                             width: 10,
@@ -223,7 +230,9 @@ class _RegistrationFormScreenState extends State<RegistrationFormScreen> {
                                       fontSize: 11,
                                     ),
                                   ),
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    Navigator.of(context).pushReplacementNamed(LoginScreen.routeName);
+                                  },
                                 ),
                               ),
                             ],

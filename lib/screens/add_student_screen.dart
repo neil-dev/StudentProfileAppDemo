@@ -3,6 +3,7 @@ import '../widgets/form_field.dart';
 // import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class AddStudentScreen extends StatefulWidget {
+  static const routeName = '/add';
   @override
   _AddStudentScreenState createState() => _AddStudentScreenState();
 }
